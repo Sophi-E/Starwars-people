@@ -9,7 +9,6 @@ const Character = (props) => {
   const [character, setCharacter] = useState({});
 
   useEffect(() => {
-    console.log(props.url);
     characters.length > 0 &&
       setCharacter(characters.find(({ url }) => url === props.url));
 

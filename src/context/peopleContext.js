@@ -6,8 +6,6 @@ export const PeopleProvider = ({ children }) => {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // const [error, setError] = useState()
-
   useEffect(async () => {
     try {
       async function fetchCharacters() {
