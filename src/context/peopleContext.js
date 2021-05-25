@@ -6,20 +6,20 @@ export const PeopleProvider = ({ children }) => {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(async () => {
-    // try {
-    async function fetchCharacters() {
-      let res = await fetch("https://swapi.dev/api/people/");
-      let data = await res.json();
-      setCharacters(data.results);
-    }
+  useEffect(() => {
+    try {
+      async function fetchCharacters() {
+        let res = await fetch("https://swapi.dev/api/people/");
+        let data = await res.json();
+        setCharacters(data.results);
+        setLoading(false);
+      }
 
-    await fetchCharacters();
-    setLoading(false);
-    // } catch (err) {
-    //   console.error(err.message);
-    // }
-  }, [characters]);
+      fetchCharacters();
+    } catch (err) {
+      console.error(err.message);
+    }
+  }, []);
 
   const value = {
     characters,
