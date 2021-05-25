@@ -13,7 +13,7 @@ const Character = (props) => {
       setCharacter(characters.find(({ url }) => url === props.url));
 
     if (props.url) setDataReady(true);
-  }, [props.url]);
+  }, [characters, props.url]);
 
   return (
     <p>
