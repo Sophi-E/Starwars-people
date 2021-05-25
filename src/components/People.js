@@ -15,20 +15,18 @@ const People = () => {
       {characters.length > 0 &&
         characters.map((character, index) => {
           return (
-            <>
-              <ListGroup key={index} as="ul" style={divStyle}>
-                <ListGroup.Item
-                  action
-                  onClick={() => {
-                    setId(character.url);
-                    // alert(id);
-                    setModalShow(true);
-                  }}
-                >
-                  {character.name}
-                </ListGroup.Item>
-              </ListGroup>
-            </>
+            <ListGroup key={index} as="ul" style={divStyle}>
+              <ListGroup.Item
+                action
+                onClick={() => {
+                  setId(character.url);
+                  // alert(id);
+                  setModalShow(true);
+                }}
+              >
+                {character.name}
+              </ListGroup.Item>
+            </ListGroup>
           );
         })}
 

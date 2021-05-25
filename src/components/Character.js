@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Modal } from "react-bootstrap";
+import { Modal, Row, Col, Image } from "react-bootstrap";
 import { PeopleContext } from "../context/peopleContext";
+import starrwars from "../starrwars.jpg";
 
 const Character = (props) => {
   const { characters } = useContext(PeopleContext);
@@ -30,6 +31,11 @@ const Character = (props) => {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
+            <Row>
+              <Col xs={6} md={4}>
+                <Image fluid src={starrwars} alt="dummy image" rounded />
+              </Col>
+            </Row>
             <p>
               <strong>Gender: {character.gender}</strong>
             </p>
